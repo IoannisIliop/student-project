@@ -12,13 +12,13 @@ import java.util.stream.Collectors;
 public class SubjectService {
     private final SubjectRepository subjectRepository;
 
-@Autowired
+    @Autowired
     public SubjectService(SubjectRepository subjectRepository) {
         this.subjectRepository = subjectRepository;
     }
 
-    public static List<Subject> getSubject(){
-        return SubjectRepository.findAll()
+    public List<Subject> getSubject() {
+        return subjectRepository.findAll()
                 .stream()
                 .map(studentEntity ->
                         Subject.builder()
