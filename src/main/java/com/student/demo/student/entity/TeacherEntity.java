@@ -7,26 +7,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
-@Table(name = "student")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class StudentEntity {
+@Table(name = "Teacher")
+public class TeacherEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String name;
     private String email;
     private LocalDate dod;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "student_subject",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "subject_id")
-    )
-    private List<SubjectEntity> subjects;
+    private String lesson;
+
+    public TeacherEntity(Long o, String alex, String mail, LocalDate of, String english) {
+    }
 }

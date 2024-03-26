@@ -6,9 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
-@Table(name = "Subjects")
+@Table(name = "Subject")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -18,4 +20,6 @@ public class SubjectEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @ManyToMany(mappedBy = "subjects", fetch = FetchType.EAGER)
+    private List<StudentEntity> students;
 }

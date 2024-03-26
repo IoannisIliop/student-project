@@ -6,16 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder
-public class Student {
-    private Long id;
+public class Teacher {
+    private long id;
     private String name;
     private String email;
     private LocalDate dod;
-    private List<Subject> subjects;
+    private String lesson;
 }
